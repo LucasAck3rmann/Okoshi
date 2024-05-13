@@ -1,0 +1,79 @@
+</html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Formulário</title>
+  </head>
+  <body>
+    <div class="link">
+      <a href="#" id="sacBtn">SAC</a>
+      <a href="#" id="revenderBtn">Quero Revender</a>
+    </div>
+
+    <div class="form-container">
+      <form id="SAC" class="active">
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="nome">Nome:</label><br />
+        <input type="text" id="nome" name="nome" required /><br /><br />
+
+        <label for="assunto"></label><br />
+        <select id="assunto" name="assunto" required>
+          <option value="" disabled selected hidden>Assunto</option>
+          <option value="reclamacao">Reclamação</option>
+          <option value="elogio">Elogio</option>
+          <option value="outro">Outro</option></select
+        ><br /><br />
+
+        <label for="comentario">Comentário:</label><br />
+        <textarea
+          id="comentario"
+          name="comentario"
+          rows="4"
+          cols="50"
+          required
+        ></textarea
+        ><br /><br />
+
+        <input type="submit" value="Enviar" name="submit" />
+      </form>
+
+      <form id="Quero_revender">
+        <label for="cnpj">CNPJ:</label><br />
+        <input
+          type="text"
+          id="cnpj"
+          name="cnpj"
+          pattern="[0-9]{14}"
+          title="O CNPJ deve conter exatamente 14 números."
+          placeholder="Digite seu CNPJ"
+          required
+          oninvalid="this.setCustomValidity('O CNPJ deve conter exatamente 14 números.')"
+        /><br /><br />
+
+        <label for="nome_revender">Nome:</label><br />
+        <input
+          type="text"
+          id="nome_revender"
+          name="nome_revender"
+        /><br /><br />
+
+        <label for="comentario_revender">Comentário:</label><br />
+        <textarea
+          id="comentario_revender"
+          name="comentario_revender"
+          rows="4"
+          cols="50"
+          required
+        ></textarea
+        ><br /><br />
+
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+  </body>
+</html>
