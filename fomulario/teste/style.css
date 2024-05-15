@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  background: rgb(131, 112, 140);
+}
+.container {
+  max-width: 800px;
+  background: rgb(131, 112, 140);
+  width: 450px;
+  padding: 3px 30px 10px 30px;
+}
+.container .text {
+  color: #fff;
+  text-align: center;
+  font-size: 41px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container form .form-row {
+  display: flex;
+  margin: 32px 0;
+}
+form .form-row .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row .textarea {
+  height: 70px;
+}
+.input-data input,
+.textarea textarea {
+  background-color: rgb(131, 112, 140);
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.input-data input:focus ~ label,
+.textarea textarea:focus ~ label,
+.input-data input:valid ~ label,
+.textarea textarea:valid ~ label {
+  background-color: rgb(131, 112, 140);
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: rgb(56, 38, 102);
+}
+.textarea textarea {
+  background-color: rgb(131, 112, 140);
+  resize: none;
+}
+
+.telefone {
+  color: #fff;
+}
+
+.input-data label {
+  background-color: rgb(131, 112, 140);
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.textarea label {
+  background-color: rgb(131, 112, 140);
+  width: 100%;
+  bottom: 40px;
+}
+.input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: rgb(56, 38, 102);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+@media (max-width: 700px) {
+  .container .text {
+    font-size: 30px;
+  }
+  .container form {
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row {
+    display: block;
+  }
+  form .form-row .input-data {
+    margin: 35px 0 !important;
+  }
+}
+
+.assunte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#assunto {
+  background-color: rgb(131, 112, 140);
+  width: 90%;
+  height: 40px;
+  font-size: 17px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  color: #fff; /* Cor do texto no campo de assunto */
+  text-align: left;
+}
+
+#assunto option {
+  color: #fff; /* Cor do texto nas opções */
+  background-color: rgb(56, 38, 102); /* Cor de fundo das opções */
+}
+
+#assunto option:hover {
+  background-color: #3498db; /* Cor de fundo das opções ao passar o mouse */
+}
+
+.input-data .envio {
+  transition: all 0.3s ease;
+}
+
+.input-data .envio:hover {
+  color: rgb(
+    229,
+    70,
+    90
+  ); /* Define a cor do texto ao passar o mouse sobre o botão */
+}
+
+.input-data .envio {
+  color: #fff;
+  border-bottom: none;
+  width: 80px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: -70px;
+  margin-left: 210px;
+}
+
+/* Estilo para campos inválidos */
+.input-data.invalid input,
+.input-data.invalid textarea,
+#assunto.invalid {
+  border-bottom: 1px solid red;
+}
+
+.input-data.invalid label,
+.textarea.invalid label {
+  color: red;
+}
+
+/* Ajuste para o select */
+#assunto.invalid {
+  border-bottom: 1px solid red;
+  color: red;
+}

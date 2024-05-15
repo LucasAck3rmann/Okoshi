@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div novalidate class="container" autocomplete="off">
+        <form action="#">
+           <div class="form-row">
+              <div class="input-data">
+                 <input type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Nome Completo</label>
+              </div>
+           </div>
+           <div class="form-row">
+              <div class="input-data">
+                 <input novalidate type="email" required>
+                 <div class="underline"></div>
+                 <label>E-mail</label>
+              </div>
+              <div class="input-data">
+                 <input type="text" required>
+                 <div class="underline"></div>
+                 <label class="telefone" for="tel">Telefone</label>
+              </div>
+           </div>
+        <div class="assunte">
+           <select novalidate id="assunto" name="assunto" required>
+            <option value="" disabled selected hidden>Assunto</option>
+            <option value="duvida">Dúvida</option>
+            <option value="elogio">Elogio</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="sugestao">Sugestão</option>
+        </select>
+        </div>
+           <div class="form-row">
+            <label for="assunto"></label><br />
+           <div class="input-data textarea">
+              <textarea rows="8" cols="80" required></textarea>
+              <br />
+              <div class="underline"></div>
+              <label for="">Mensagem</label>
+              <br />
+              <div class="form-row submit-btn">
+                 <div class="input-data">
+                    <input formnovalidate class="envio" type="submit" value="ENVIAR">
+                 </div>
+            </div>
+        </form>
+        </div>
+        <script>
+         document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  const fields = form.querySelectorAll('input, textarea, select');
+
+  fields.forEach(field => {
+    field.addEventListener('input', () => {
+      validateField(field);
+    });
+
+    field.addEventListener('blur', () => {
+      validateField(field);
+    });
+  });
+
+  function validateField(field) {
+    if (!field.checkValidity()) {
+      field.parentElement.classList.add('invalid');
+    } else {
+      field.parentElement.classList.remove('invalid');
+    }
+  }
+});
+
+        </script>
+</body>
+</html>

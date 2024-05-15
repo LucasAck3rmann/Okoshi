@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=0OzeEW1z-YZ_-oTR8-N-BRFPxPIfs1_TS0Rh_hDkmJZqSi3GRKZY1t7xLF1e4gXwr-DwTa3oOh-ECPoPfRGkfGKY7egZubVSsGlQwtrNRNhs8byegE0GD2rpyRPb9MW7jH6OtcQ4CWvmUIHcqxznxDz1l075v0h3frUnkT-KCPrBFYVkBFrFLhw4GvGwRwdw"
+      charset="UTF-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly93d3cub2tvc2hpLmNvbS5ici9mb3JtdWxhcmlvLz9jbnBqPTE0NTE5NDYxODE1NDMxJm5vbWVfcmV2ZW5kZXI9THVjYXMlMjBMaW5kbyZjb21lbnRhcmlvX3JldmVuZGVyPUxjdWFlcmFz"
+    />
+    <style>
+      .link {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+      .link a {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-decoration: none;
+        color: black;
+        transition: color 0.5s ease;
+      }
+      .link a:hover {
+        color: blue;
+      }
+      .form-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65vh; /* Definindo a altura da .form-container para ocupar toda a altura da tela */
+      }
+      form {
+        position: absolute; /* Alterado para relativo para que o formulário fique dentro do .form-container */
+        opacity: 0; /* Alterado para 0 para que o formulário seja invisível por padrão */
+        transition: opacity 0.5s ease;
+        max-width: 50%; /* Definindo a largura máxima do formulário */
+      }
+      .desactive {
+        pointer-events: none;
+      }
+      .active {
+        z-index: 100;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="link">
+      <a href="#" id="sacBtn">SAC</a>
+      <a href="#" id="revenderBtn">Quero Revender</a>
+    </div>
+
+    <div class="form-container" onsubmit="return validarTelefone()">
+      <form id="SAC" class="active">
+        <label for="nome">Nome:</label><br />
+        <input type="text" id="nome" name="nome" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="telefone">Telefone:</label><br />
+        <input
+          type="telefone"
+          id="telefone"
+          name="telefone"
+          required
+        /><br /><br />
+
+        <label for="assunto"></label><br />
+        <select id="assunto" name="assunto" required>
+          <option class="assunter" value="" disabled selected hidden>
+            Assunto
+          </option>
+          <option value="reclamacao">Reclamação</option>
+          <option value="elogio">Elogio</option>
+          <option value="outro">Outro</option></select
+        ><br /><br />
+
+        <label for="comentario">Comentário:</label><br />
+        <textarea
+          id="comentario"
+          name="comentario"
+          rows="4"
+          cols="50"
+          required
+        ></textarea
+        ><br /><br />
+
+        <input type="submit" value="Enviar" name="submit" />
+      </form>
+
+      <form id="Quero_revender" class="desactive">
+        <label for="nome">Nome:</label><br />
+        <input type="text" id="nome" name="nome" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+
+        <input type="email" id="email" name="email" required /><br /><br />
+        <label for="telefone">Telefone:</label><br />
+        <input
+          type="telefone"
+          id="telefone"
+          name="telefone"
+          required
+        /><br /><br />
+        <label for="cnpj">CNPJ:</label><br />
+        <input
+          type="text"
+          id="cnpj"
+          name="cnpj"
+          pattern="[0-9]{14}"
+          title="O CNPJ deve conter exatamente 14 números."
+        /><br /><br />
+
+        <label for="comentario_revender">Comentário:</label><br />
+        <textarea
+          id="comentario_revender"
+          name="comentario_revender"
+          rows="4"
+          cols="50"
+          required
+        ></textarea
+        ><br /><br />
+
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+    <script>
+      document.getElementById("sacBtn").addEventListener("click", function () {
+        document.getElementById("SAC").classList.add("active");
+        document.getElementById("Quero_revender").classList.remove("active");
+        document.getElementById("SAC").classList.remove("desactive");
+        document.getElementById("Quero_revender").classList.add("desactive");
+      });
+
+      document
+        .getElementById("revenderBtn")
+        .addEventListener("click", function () {
+          document.getElementById("Quero_revender").classList.add("active");
+          document.getElementById("SAC").classList.remove("active");
+          document
+            .getElementById("Quero_revender")
+            .classList.remove("desactive");
+          document.getElementById("SAC").classList.add("desactive");
+        });
+
+      // JavaScript para garantir que o formulário de SAC esteja ativo por padrão
+      document.addEventListener("DOMContentLoaded", function () {
+        // Adicionar a classe "active" ao formulário de SAC e remover do formulário de Quero Revender
+        document.getElementById("SAC").classList.add("active");
+      });
+    </script>
+    <script
+      type="text/javascript"
+      async
+      src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/e19923ea-5b2b-41d0-99c3-d5c04f224c5d-loader.js"
+    ></script>
+  </body>
+</html>
