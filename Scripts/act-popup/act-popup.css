@@ -1,0 +1,218 @@
+﻿@-webkit-keyframes autofill {
+  to {
+    color: #FFF;
+    background: #333; } }
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(100%); } }
+
+.act-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+  transition: all .7s; }
+  .act-popup-overlay.closed {
+    top: -100%; }
+  .act-popup-overlay .act-popup {
+    position: relative;
+    display: block;
+    width: 500px;
+    background: #FFF;
+    justify-content: center;
+    padding: 50px;
+    box-shadow: 2.294px 3.277px 0px 0px rgba(73, 73, 73, 0.22);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px; }
+    .act-popup-overlay .act-popup .close-btn {
+      top: -19px;
+      right: -19px;
+      position: absolute;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 47px;
+      color: #FFF;
+      font-weight: 100;
+      background: #d64747;
+      cursor: pointer;
+      box-shadow: 2.294px 3.277px 0px 0px rgba(73, 73, 73, 0.22);
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      border-radius: 10px; }
+      .act-popup-overlay .act-popup .close-btn:hover {
+        background: #472553; }
+    .act-popup-overlay .act-popup .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      color: #d64747;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0; }
+      .act-popup-overlay .act-popup .title [class*='ion-'] {
+        font-size: 23px;
+        padding-right: 10px; }
+    .act-popup-overlay .act-popup hr {
+      height: 1px;
+      width: 90%;
+      border-color: #ebebeb; }
+    .act-popup-overlay .act-popup .form {
+      width: auto;
+      display: block;
+      padding-top: 16px; }
+      .act-popup-overlay .act-popup .form .row {
+        padding: 0 -5px; }
+        .act-popup-overlay .act-popup .form .row fieldset {
+          padding: 6px 5px; }
+          .act-popup-overlay .act-popup .form .row fieldset input[type='text'] {
+            display: block;
+            width: 100%;
+            height: 30px;
+            border: none;
+            background: none;
+            border-bottom: 1px solid #002436;
+            font-size: 14px;
+            color: #002436;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none; }
+          .act-popup-overlay .act-popup .form .row fieldset .select {
+            width: 100%;
+            position: relative; }
+            .act-popup-overlay .act-popup .form .row fieldset .select:before {
+              content: "\f3d0";
+              font-family: 'Ionicons';
+              color: #002436;
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 30px;
+              height: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 25px; }
+            .act-popup-overlay .act-popup .form .row fieldset .select select {
+              position: relative;
+              z-index: 2;
+              display: block;
+              width: 100%;
+              height: 30px;
+              border: none;
+              background: none;
+              border-bottom: 1px solid #002436;
+              font-size: 14px;
+              color: #002436;
+              outline: none;
+              -webkit-appearance: none; }
+              .act-popup-overlay .act-popup .form .row fieldset .select select::-ms-expand {
+                display: none; }
+          .act-popup-overlay .act-popup .form .row fieldset textarea {
+            width: 100%;
+            height: 80px;
+            display: block;
+            border: none;
+            background: none;
+            border-bottom: 1px solid #002436;
+            resize: none;
+            outline: none;
+            color: #002436;
+            font-size: 14px;
+            -webkit-appearance: none;
+            appearance: none; }
+          .act-popup-overlay .act-popup .form .row fieldset input[type='submit'] {
+            display: block;
+            width: 100%;
+            height: 50px;
+            background: none;
+            border: none;
+            background: #d64747;
+            color: #FFF;
+            cursor: pointer;
+            text-transform: uppercase;
+            -webkit-appearance: none;
+            appearance: none;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            border-radius: 15px; }
+            .act-popup-overlay .act-popup .form .row fieldset input[type='submit']:hover {
+              background: #472553; }
+          .act-popup-overlay .act-popup .form .row fieldset ::-webkit-input-placeholder {
+            color: #002436; }
+          .act-popup-overlay .act-popup .form .row fieldset :-moz-placeholder {
+            color: #002436;
+            opacity: 1; }
+          .act-popup-overlay .act-popup .form .row fieldset ::-moz-placeholder {
+            color: #002436;
+            opacity: 1; }
+          .act-popup-overlay .act-popup .form .row fieldset :-ms-input-placeholder {
+            color: #002436; }
+          .act-popup-overlay .act-popup .form .row fieldset ::-ms-input-placeholder {
+            color: #002436; }
+
+@media only screen and (max-device-width: 736px) {
+  .act-popup-overlay .act-popup {
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+    .act-popup-overlay .act-popup .close-btn {
+      width: 44px;
+      height: 44px;
+      font-size: 30px;
+      top: -10px;
+      right: -10px; }
+      .act-popup-overlay .act-popup .close-btn:hover {
+        color: #FFF;
+        background: #d64747; }
+    .act-popup-overlay .act-popup a {
+      font-size: 19px; }
+    .act-popup-overlay .act-popup hr {
+      display: none; }
+    .act-popup-overlay .act-popup .title {
+      font-size: 14px; }
+    .act-popup-overlay .act-popup p {
+      padding: 7px 20px;
+      color: #FFF;
+      font-size: 12px; }
+    .act-popup-overlay .act-popup .form {
+      padding-top: 0; }
+      .act-popup-overlay .act-popup .form .row fieldset input[type='text'] {
+        height: 20px;
+        font-size: 12px; }
+      .act-popup-overlay .act-popup .form .row fieldset input[type='submit'] {
+        font-size: 14px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px; }
+        .act-popup-overlay .act-popup .form .row fieldset input[type='submit']:hover {
+          background: #d64747;
+          color: #FFF; }
+    .act-popup-overlay .act-popup ul.buttons li a:hover {
+      background: #FFF;
+      color: #8c8279; } }

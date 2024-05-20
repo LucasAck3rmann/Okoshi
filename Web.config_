@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <connectionStrings>
+    <add name="ConexaoDB" connectionString="Data Source=hikage_8326041.sqlserver.dbaas.com.br;Initial Catalog=hikage_8326041;persist security info=True;user id=hikage_8326041;password=af0HAu4u!@;Connection Timeout=500000;multipleactiveresultsets=True;Min Pool Size=40;Max Pool Size=160;Connection LifeTime=0;Load Balance Timeout=360;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <appSettings>
+    <add key="webpages:Version" value="2.0.0.0" />
+    <add key="webpages:Enabled" value="false" />
+    <add key="PreserveLoginUrl" value="true" />
+    <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+    <add key="UrlSite" value="https://www.okoshi.com.br/" />
+    <add key="SiteName" value="Okoshi" />
+    <add key="RedirectWWWHttps" value="true" />
+    <add key="RedirectWWW" value="false" />
+    <add key="RedirectTo" value="true" />
+    <add key="RedirectTo404" value="true" />
+  </appSettings>
+  <system.web>
+    <globalization fileEncoding="utf-8" culture="pt-BR" uiCulture="pt-BR" enableClientBasedCulture="true" />
+    <customErrors mode="Off" />
+    <httpRuntime targetFramework="4.5" executionTimeout="500" maxRequestLength="10485760" />
+    <!--Limite de upload de image - 10MB-->
+    <compilation debug="true" targetFramework="4.5">
+      <assemblies>
+        <add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      </assemblies>
+    </compilation>
+    <authentication mode="Forms">
+      <forms loginUrl="~/Login" timeout="30" slidingExpiration="false" />
+    </authentication>
+    <pages>
+      <namespaces>
+        <add namespace="System.Web.Helpers" />
+        <add namespace="System.Web.Mvc" />
+        <add namespace="System.Web.Mvc.Ajax" />
+        <add namespace="System.Web.Mvc.Html" />
+        <add namespace="System.Web.Optimization" />
+        <add namespace="System.Web.Routing" />
+        <add namespace="System.Web.WebPages" />
+      </namespaces>
+    </pages>
+    <httpHandlers />
+    <machineKey validationKey="C89036B01A70E698C408A90CD5D13CA7ACB8531BA6B737F68C37EF3C83D30BA6B549DB74726D6656927A1655E0ECE67267D6C1A5CE5FEFAA7A6CB82971594971" decryptionKey="7083CB34776765C005A8F34E04D732569DBC548E3CF91E5258D3FA734D15A8BD" validation="SHA1" decryption="AES" />
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+            <clear />
+            <add name="PHP7.0-FastCGI" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\PHP_7.0\php-cgi.exe" resourceType="Either" />
+            <add name="PHP_5.6" path="*.php" verb="*" type="" modules="FastCgiModule" scriptProcessor="C:\PHP_5.6\php-cgi.exe" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="PHP5.3-FastCGI" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\PHP_5.3\php-cgi.exe" resourceType="Either" />
+            <add name="PHP5.2-FastCGI" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\PHP_5.2\php-cgi.exe" resourceType="Either" />
+            <add name="PHP5.4-FastCGI" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\PHP_5.4\php-cgi.exe" resourceType="Either" />
+            <add name="PHP5.6-FastCGI" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\PHP_5.6\php-cgi.exe" resourceType="Either" />
+            <add name="PHP7.1-FastCGI" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\PHP_7.1\php-cgi.exe" resourceType="Either" />
+            <add name="PHP_5.3" path="*.php" verb="*" type="" modules="FastCgiModule" scriptProcessor="C:\PHP_5.3\php-cgi.exe" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="PHP_5.5" path="*.php" verb="*" type="" modules="FastCgiModule" scriptProcessor="C:\PHP_5.5\php-cgi.exe" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="PHP_5.4" path="*.php" verb="*" type="" modules="FastCgiModule" scriptProcessor="C:\PHP_5.4\php-cgi.exe" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="PHP_5.2" path="*.php" verb="*" type="" modules="FastCgiModule" scriptProcessor="C:\PHP_5.2\php-cgi.exe" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="xamlx-ISAPI-4.0_64bit" path="*.xamlx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="4194304" />
+            <add name="xamlx-ISAPI-4.0_32bit" path="*.xamlx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="4194304" />
+            <add name="xamlx-Integrated-4.0" path="*.xamlx" verb="GET,HEAD,POST,DEBUG" type="System.Xaml.Hosting.XamlHttpHandlerFactory, System.Xaml.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="rules-ISAPI-4.0_64bit" path="*.rules" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="4194304" />
+            <add name="rules-ISAPI-4.0_32bit" path="*.rules" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="4194304" />
+            <add name="rules-Integrated-4.0" path="*.rules" verb="*" type="System.ServiceModel.Activation.ServiceHttpHandlerFactory, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="xoml-ISAPI-4.0_64bit" path="*.xoml" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="4194304" />
+            <add name="xoml-ISAPI-4.0_32bit" path="*.xoml" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="4194304" />
+            <add name="xoml-Integrated-4.0" path="*.xoml" verb="*" type="System.ServiceModel.Activation.ServiceHttpHandlerFactory, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="svc-ISAPI-4.0_64bit" path="*.svc" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="4194304" />
+            <add name="svc-ISAPI-4.0_32bit" path="*.svc" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="4194304" />
+            <add name="svc-Integrated-4.0" path="*.svc" verb="*" type="System.ServiceModel.Activation.ServiceHttpHandlerFactory, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="rules-64-ISAPI-2.0" path="*.rules" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="4194304" />
+            <add name="rules-ISAPI-2.0" path="*.rules" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="4194304" />
+            <add name="rules-Integrated" path="*.rules" verb="*" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="xoml-64-ISAPI-2.0" path="*.xoml" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="4194304" />
+            <add name="xoml-ISAPI-2.0" path="*.xoml" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="4194304" />
+            <add name="xoml-Integrated" path="*.xoml" verb="*" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="svc-ISAPI-2.0-64" path="*.svc" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="4194304" />
+            <add name="svc-ISAPI-2.0" path="*.svc" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="4194304" />
+            <add name="svc-Integrated" path="*.svc" verb="*" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="ASPClassic" path="*.asp" verb="GET,HEAD,POST" type="" modules="IsapiModule" scriptProcessor="%windir%\system32\inetsrv\asp.dll" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="ISAPI-dll" path="*.dll" verb="*" type="" modules="IsapiModule" scriptProcessor="" resourceType="File" requireAccess="Execute" allowPathInfo="true" preCondition="" responseBufferLimit="4194304" />
+            <add name="AXD-ISAPI-4.0_64bit" path="*.axd" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="PageHandlerFactory-ISAPI-4.0_64bit" path="*.aspx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="SimpleHandlerFactory-ISAPI-4.0_64bit" path="*.ashx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="WebServiceHandlerFactory-ISAPI-4.0_64bit" path="*.asmx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-rem-ISAPI-4.0_64bit" path="*.rem" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-soap-ISAPI-4.0_64bit" path="*.soap" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="aspq-ISAPI-4.0_64bit" path="*.aspq" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="cshtm-ISAPI-4.0_64bit" path="*.cshtm" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="cshtml-ISAPI-4.0_64bit" path="*.cshtml" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="vbhtm-ISAPI-4.0_64bit" path="*.vbhtm" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="vbhtml-ISAPI-4.0_64bit" path="*.vbhtml" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+            <add name="TraceHandler-Integrated-4.0" path="trace.axd" verb="GET,HEAD,POST,DEBUG" type="System.Web.Handlers.TraceHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="WebAdminHandler-Integrated-4.0" path="WebAdmin.axd" verb="GET,DEBUG" type="System.Web.Handlers.WebAdminHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="AssemblyResourceLoader-Integrated-4.0" path="WebResource.axd" verb="GET,DEBUG" type="System.Web.Handlers.AssemblyResourceLoader" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="PageHandlerFactory-Integrated-4.0" path="*.aspx" verb="GET,HEAD,POST,DEBUG" type="System.Web.UI.PageHandlerFactory" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="SimpleHandlerFactory-Integrated-4.0" path="*.ashx" verb="GET,HEAD,POST,DEBUG" type="System.Web.UI.SimpleHandlerFactory" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="WebServiceHandlerFactory-Integrated-4.0" path="*.asmx" verb="GET,HEAD,POST,DEBUG" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="HttpRemotingHandlerFactory-rem-Integrated-4.0" path="*.rem" verb="GET,HEAD,POST,DEBUG" type="System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory, System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="HttpRemotingHandlerFactory-soap-Integrated-4.0" path="*.soap" verb="GET,HEAD,POST,DEBUG" type="System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory, System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="aspq-Integrated-4.0" path="*.aspq" verb="GET,HEAD,POST,DEBUG" type="System.Web.HttpForbiddenHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="cshtm-Integrated-4.0" path="*.cshtm" verb="GET,HEAD,POST,DEBUG" type="System.Web.HttpForbiddenHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="cshtml-Integrated-4.0" path="*.cshtml" verb="GET,HEAD,POST,DEBUG" type="System.Web.HttpForbiddenHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="vbhtm-Integrated-4.0" path="*.vbhtm" verb="GET,HEAD,POST,DEBUG" type="System.Web.HttpForbiddenHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="vbhtml-Integrated-4.0" path="*.vbhtml" verb="GET,HEAD,POST,DEBUG" type="System.Web.HttpForbiddenHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="ScriptHandlerFactoryAppServices-Integrated-4.0" path="*_AppService.axd" verb="*" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="ScriptResourceIntegrated-4.0" path="*ScriptResource.axd" verb="GET,HEAD" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv4.0" responseBufferLimit="4194304" />
+            <add name="AXD-ISAPI-4.0_32bit" path="*.axd" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="PageHandlerFactory-ISAPI-4.0_32bit" path="*.aspx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="SimpleHandlerFactory-ISAPI-4.0_32bit" path="*.ashx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="WebServiceHandlerFactory-ISAPI-4.0_32bit" path="*.asmx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-rem-ISAPI-4.0_32bit" path="*.rem" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-soap-ISAPI-4.0_32bit" path="*.soap" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="aspq-ISAPI-4.0_32bit" path="*.aspq" verb="*" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="cshtm-ISAPI-4.0_32bit" path="*.cshtm" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="cshtml-ISAPI-4.0_32bit" path="*.cshtml" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="vbhtm-ISAPI-4.0_32bit" path="*.vbhtm" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="vbhtml-ISAPI-4.0_32bit" path="*.vbhtml" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+            <add name="TraceHandler-Integrated" path="trace.axd" verb="GET,HEAD,POST,DEBUG" type="System.Web.Handlers.TraceHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="WebAdminHandler-Integrated" path="WebAdmin.axd" verb="GET,DEBUG" type="System.Web.Handlers.WebAdminHandler" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="AssemblyResourceLoader-Integrated" path="WebResource.axd" verb="GET,DEBUG" type="System.Web.Handlers.AssemblyResourceLoader" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="PageHandlerFactory-Integrated" path="*.aspx" verb="GET,HEAD,POST,DEBUG" type="System.Web.UI.PageHandlerFactory" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="SimpleHandlerFactory-Integrated" path="*.ashx" verb="GET,HEAD,POST,DEBUG" type="System.Web.UI.SimpleHandlerFactory" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="WebServiceHandlerFactory-Integrated" path="*.asmx" verb="GET,HEAD,POST,DEBUG" type="System.Web.Services.Protocols.WebServiceHandlerFactory, System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="HttpRemotingHandlerFactory-rem-Integrated" path="*.rem" verb="GET,HEAD,POST,DEBUG" type="System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="HttpRemotingHandlerFactory-soap-Integrated" path="*.soap" verb="GET,HEAD,POST,DEBUG" type="System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory, System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" modules="ManagedPipelineHandler" scriptProcessor="" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="integratedMode,runtimeVersionv2.0" responseBufferLimit="4194304" />
+            <add name="AXD-ISAPI-2.0" path="*.axd" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="0" />
+            <add name="PageHandlerFactory-ISAPI-2.0" path="*.aspx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="0" />
+            <add name="SimpleHandlerFactory-ISAPI-2.0" path="*.ashx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="0" />
+            <add name="WebServiceHandlerFactory-ISAPI-2.0" path="*.asmx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-rem-ISAPI-2.0" path="*.rem" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-soap-ISAPI-2.0" path="*.soap" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness32" responseBufferLimit="0" />
+            <add name="AXD-ISAPI-2.0-64" path="*.axd" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="0" />
+            <add name="PageHandlerFactory-ISAPI-2.0-64" path="*.aspx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="0" />
+            <add name="SimpleHandlerFactory-ISAPI-2.0-64" path="*.ashx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="0" />
+            <add name="WebServiceHandlerFactory-ISAPI-2.0-64" path="*.asmx" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-rem-ISAPI-2.0-64" path="*.rem" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="0" />
+            <add name="HttpRemotingHandlerFactory-soap-ISAPI-2.0-64" path="*.soap" verb="GET,HEAD,POST,DEBUG" type="" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" requireAccess="Script" allowPathInfo="false" preCondition="classicMode,runtimeVersionv2.0,bitness64" responseBufferLimit="0" />
+            <add name="CGI-exe" path="*.exe" verb="*" type="" modules="CgiModule" scriptProcessor="" resourceType="File" requireAccess="Execute" allowPathInfo="true" preCondition="" responseBufferLimit="4194304" />
+            <add name="SSINC-stm" path="*.stm" verb="GET,HEAD,POST" type="" modules="ServerSideIncludeModule" scriptProcessor="" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="SSINC-shtm" path="*.shtm" verb="GET,HEAD,POST" type="" modules="ServerSideIncludeModule" scriptProcessor="" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="SSINC-shtml" path="*.shtml" verb="GET,HEAD,POST" type="" modules="ServerSideIncludeModule" scriptProcessor="" resourceType="File" requireAccess="Script" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="TRACEVerbHandler" path="*" verb="TRACE" type="" modules="ProtocolSupportModule" scriptProcessor="" resourceType="Unspecified" requireAccess="None" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="OPTIONSVerbHandler" path="*" verb="OPTIONS" type="" modules="ProtocolSupportModule" scriptProcessor="" resourceType="Unspecified" requireAccess="None" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+            <add name="StaticFile" path="*" verb="*" type="" modules="StaticFileModule,DefaultDocumentModule,DirectoryListingModule" scriptProcessor="" resourceType="Either" requireAccess="Read" allowPathInfo="false" preCondition="" responseBufferLimit="4194304" />
+    </handlers>
+  </system.webServer>
+  <system.webServer>
+    <staticContent>
+      <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="365.00:00:00" />
+      <!--<mimeMap fileExtension=".webp" mimeType="image/webp" />-->
+      <!--<mimeMap fileExtension=".webp" mimeType="image/webp" />-->
+    </staticContent>
+    <urlCompression doStaticCompression="true" doDynamicCompression="true" />
+  </system.webServer>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true">
+      <remove name="BundleModule" />
+      <add name="BundleModule" type="System.Web.Optimization.BundleModule" />
+    </modules>
+  </system.webServer>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-1.3.0.0" newVersion="1.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="EntityFramework" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-7.0.0.0" newVersion="7.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+</configuration>

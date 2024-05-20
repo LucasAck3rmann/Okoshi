@@ -1,0 +1,208 @@
+﻿@model Dominio.Estruturas.CategoriaItem
+@{
+    Layout = "~/Views/Shared/_layout-dynamic.cshtml";
+}
+@section metatags{
+    <title>@Model.Title - Okoshi</title>
+    <meta name='keywords' content='@Model.Keywords' />
+    <meta name='description' content='@Model.Description' />
+}
+
+<div class="page-header product-category-01 @Model.Cor">
+    <div class="grid">
+        <h2 class="title">
+            Sem glúten. Sem lactose. Vegano.
+            <strong>Okoshi é leve para a vida.</strong>
+        </h2>
+    </div>
+
+    <ul class="submenu">
+        @foreach (var item in new RepositorioEF.CategoriaRepositorioEF().ListarTodos())
+        {
+            <li>
+                <a href="/@item.SEUrl" title="@item.Nome">
+                    <span class="ico"></span>
+                    <span class="text">
+                        @item.Nome
+                    </span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="inner-page product-category">
+    <div class="content">
+        <ul class="breadcrumbs">
+            <li>
+                <a href="/@Model.SEUrl" title="Produtos">Produtos</a>
+            </li>
+            <li>
+                @Model.Nome
+            </li>
+        </ul>
+
+        <div class="description-grid">
+            <div class="title-grid">
+                <h1 class="title @Model.Cor">
+                    @Model.Nome
+                </h1>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text">
+                @if (!string.IsNullOrEmpty(Model.Descricao))
+                {
+                    <p>
+                        @MvcHtmlString.Create(Model.Descricao.Replace(Environment.NewLine, "<br />"))
+                    </p>
+                }
+            </div>
+        </div>
+
+        <ul class="features">
+            @if (Model.Selo1)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem<br>
+                        Glúten
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo2)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br>Lactose
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo3)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Livre de <br>Transgênicos
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo4)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br>Corantes
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo5)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br>Conservantes
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo6)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br>Aditivos
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo7)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Livre de <br>Colesterol
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo8)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br>Gordura Trans
+                    </span>
+                </li>
+            }
+
+            @if (Model.Selo9)
+            {
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Vegano
+                    </span>
+                </li>
+            }
+        </ul>
+
+        @if (Model.Itens != null)
+        {
+            <div class="products-list">
+                @foreach (var item in Model.Itens)
+                {
+                    <article data-npagina="@item.nPagina">
+                        <a href="@item.Url" title="@item.Nome" data-score="10" data-titulo="Categoria - Clique Produto @item.Nome" class="score @Model.Cor">
+                            <figure>
+                                @if (!string.IsNullOrEmpty(item.Imagem))
+                                {
+                                    <img src="@item.Imagem" alt="@item.Nome" />
+                                }
+                            </figure>
+                            <h2 class="product-name @Model.Cor">
+                                @item.Nome
+                            </h2>
+
+                            @if (item.Flag)
+                            {
+                                <span class="new @Model.Cor"></span>
+                            }
+                        </a>
+                    </article>
+                }
+            </div>
+
+            <input type="hidden" class="numero-paginas" value="@Model.qPaginas" />
+            if (Model.qPaginas > 1)
+            {
+                <span class="paginacao">
+                    <div class="page-nav">
+                        <a href="#" class="nav first inactive btpagina" title="Primeira página"><span class="ion-ios-rewind"></span></a>
+                        <a href="#" data-val="1" class="nav prev reflect inactive btpagina" title="Anterior"><span class="ion-ios-play"></span></a>
+                        <ul>
+                            <li class="active"><a href="#" data-val="1" title="Página 1" class="nav btpagina">1</a></li>
+                            @for (int i = 2; i <= Model.qPaginas; i++)
+                            {
+                                <li><a href="#" data-val="@i" title="Página @i" class="nav btpagina">@i</a></li>
+                            }
+                        </ul>
+                        <a href="#" data-val="2" class="nav next btpagina" title="Próxima"><span class="ion-ios-play"></span></a>
+                        <a href="#" data-val="@Model.qPaginas" class="nav last reflect btpagina" title="Última página"><span class="ion-ios-rewind"></span></a>
+                    </div>
+                </span>
+            }
+        }
+
+        <a href="/onde-comprar" class="buy-button score" title="Onde Comprar" data-score="10" data-titulo="Categoria - Clique Onde Comprar">
+            Onde Comprar
+        </a>
+    </div>
+</div>

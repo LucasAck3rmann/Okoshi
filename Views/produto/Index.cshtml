@@ -1,0 +1,444 @@
+﻿@section metatags{
+    <title>@TempData["produto-title"]</title>
+    <meta name='keywords' content='@TempData["produto-keywords"]' />
+    <meta name='description' content='@TempData["produto-description"]' />
+}
+
+<div class="page-header products">
+    @Html.Partial("_product-submenu")
+</div>
+
+<div class="page-content products" ng-controller="produto">
+    <div class="content">
+        <a href="javascript:history.back();" class="back-button" title="Voltar">
+            <span class="ion-chevron-left"></span>
+            Voltar
+        </a>
+
+        <ul class="breadcrumb">
+            <li>
+                <a href="#" title="Produtos">Produtos</a>
+            </li>
+            <li>
+                <a href="/{{categoriaSEUrl}}" title="{{categoria}}">{{categoria}}</a>
+            </li>
+            <li>
+                {{nome}}
+            </li>
+        </ul>
+
+        <div class="product-info">
+            <div class="left-col">
+                <div class="gallery">
+                    <div class="nav prev" ng-if="imagens.length > 1"></div>
+                    <div class="nav next" ng-if="imagens.length > 1"></div>
+                    <div class="grid" ng-if="imagens.length > 0">
+                        <div class="walk">
+                            <figure ng-repeat="imagem in imagens" emit-last-repeater-element>
+                                <img ng-src="{{imagem.Url}}" />
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <h2 class="title">
+                    {{nome}}
+                </h2>
+
+                <p>
+                    <strong ng-if="descricao != '' && descricao != null" ng-bind-html="descricao"></strong>
+                </p>
+
+                <p>
+                    <strong>Referência:</strong> {{referencia}}<br />
+                    <strong>Marca:</strong> {{_marcas}}<br />
+                    <strong>Classificação:</strong> {{_tipos}}<br />
+                    <strong>Finalidade:</strong> {{atributo}}<br />
+                    @*<strong>Linha:</strong> {{_linhas}}*@
+                </p>
+
+                @if (Session["ClienteId"] != null)
+                {
+                    <a href="#" class="order-button add-carrinho" title="Solicitar Orçamento">Solicitar Orçamento</a>
+                }
+                else
+                {
+                    <a href="#" class="order-button orcamento-sem-carrinho" title="Solicitar Orçamento" data-produto="{{nome}}" data-referencia="{{referencia}}">Solicitar Orçamento</a>
+                }
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <ul class="tabs">
+                <li class="active">
+                    Aplicações
+                </li>
+                <li>
+                    Características
+                </li>
+                <li>
+                    Benefícios
+                </li>
+                <li>
+                    Complementos
+                </li>
+                <li>
+                    Assist. Técnica
+                </li>
+            </ul>
+
+            <div class="tabs-content">
+                <div class="item">
+                    <p ng-if="aplicacoes != '' && aplicacoes != null" ng-bind-html="aplicacoes"></p>
+                </div>
+
+                <div class="item">
+                    <p ng-if="caracteristicas != '' && caracteristicas != null" ng-bind-html="caracteristicas"></p>
+                </div>
+
+                <div class="item">
+                    <p ng-if="beneficios != '' && beneficios != null" ng-bind-html="beneficios"></p>
+                </div>
+
+                <div class="item">
+                    <p ng-if="complementos != '' && complementos != null" ng-bind-html="complementos"></p>
+                    <br />
+                    <p ng-if="tags != ''">
+                        <strong>Tags Relacionadas</strong><br /><span ng-if="tags != '' && tags != null" ng-bind-html="tags"></span>
+                    </p>
+                </div>
+
+                <div class="item">
+                    <p ng-if="assitenciaTecDesc != '' && assitenciaTecDesc != null" ng-bind-html="assitenciaTecDesc"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-products" ng-if="relacionados.length > 0">
+            <h2 class="title">
+                Produtos relacionados
+            </h2>
+
+            <div class="slide">
+                <div class="nav prev" ng-if="relacionados.length > 1"></div>
+
+                <div class="grid">
+                    <div class="walk">
+                        <figure ng-repeat="relacionado in relacionados" emit-last-repeater-element>
+                            <a href="{{relacionado.Url}}" title="{{relacionado.Nome}}">
+                                <img ng-src="{{relacionado.Imagem}}" alt="{{relacionado.Nome}}" />
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="nav next" ng-if="relacionados.length > 1"></div>
+            </div>
+        </div>
+
+        <div class="brands-slide" ng-if="marcas.length > 0">
+            <div class="nav prev" ng-if="marcas.length > 1"></div>
+
+            <div class="grid">
+                <div class="walk">
+                    <div class="item" ng-repeat="imarca in marcas" emit-last-repeater-element>
+                        <img ng-src="{{imarca.Imagem}}" alt="{{imarca.Nome}}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav next" ng-if="marcas.length > 1"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="pop-up-continue logged-in">
+    <div class="pop-up">
+        <h2 class="title">
+            <span class="icon ion-ios-chatboxes-outline"></span>
+            Orçamento
+        </h2>
+
+        <p>
+            O produto foi adicionado ao seu orçamento virtual.<br />
+            Escolha o que deseja fazer:
+        </p>
+        <hr>
+
+        <ul class="buttons">
+            <li>
+                <a href="/#produtos" title="Adicionar mais Produtos">
+                    <span>
+                        Adicionar mais<br />
+                        Produtos
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/carrinho" title="Finalizar Orçamento">
+                    <span>
+                        Finalizar<br />
+                        Orçamento
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    (function () {
+
+        function AfterLoadProduct() {
+
+            setTimeout(function () {
+
+                //product info page
+                //gallery
+                if ($(".page-content.products>.content .product-info .left-col .gallery .grid .walk figure").length > 1) {
+
+                    galleryPicQtt = $(".page-content.products>.content .product-info .left-col .gallery .grid .walk figure").length;
+                    galleryPicIndex = 0;
+
+                    $(".page-content.products>.content .product-info .left-col .gallery .nav").click(function (e) {
+                        e.preventDefault();
+
+                        if ($(this).hasClass("prev")) {
+                            if (galleryPicIndex > 0) {
+                                galleryPicIndex = galleryPicIndex - 1;
+                            }
+                        }
+
+                        else {
+                            if (galleryPicIndex < galleryPicQtt - 1) {
+                                galleryPicIndex = galleryPicIndex + 1;
+                            }
+                        }
+
+                        var position = $(".page-content.products>.content .product-info .left-col .gallery .grid .walk figure").eq(galleryPicIndex).position().left;
+                        $(".page-content.products>.content .product-info .left-col .gallery .grid .walk").stop().animate({ "left": -position }, 300);
+                    });
+                }
+                else {
+                    $(".page-content.products>.content .product-info .left-col .gallery .nav").remove();
+                }
+
+                //tabs
+                $(".page-content.products>.content .product-tabs .tabs li").each(function (i) {
+
+                    //mobile
+                    if ((navigator.userAgent).match(/Mobile/i)) {
+                        var button = $(this).html();
+
+                        $(".page-content.products>.content .product-tabs .tabs-content .item").eq(i).wrapInner("<div class='grid' />");
+                        $(".page-content.products>.content .product-tabs .tabs-content .item").eq(i).prepend("<h3 class='title'>" + button + "</h3>");
+                    }
+                    //desktop
+                    else {
+                        $(this).click(function (e) {
+                            e.preventDefault();
+
+                            $(this).parent().find("li").removeClass("active");
+                            $(this).addClass("active");
+
+                            $(".page-content.products>.content .product-tabs .tabs-content .item").slideUp(450);
+                            $(".page-content.products>.content .product-tabs .tabs-content .item").eq(i).slideDown(450);
+                        });
+                    }
+                });
+
+                //mobile
+                if ((navigator.userAgent).match(/Mobile/i)) {
+                    $(".page-content.products>.content .product-tabs .tabs").remove();
+
+                    $(".page-content.products>.content .product-tabs .tabs-content .item").each(function (i) {
+                        $(this).find(".title").click(function () {
+                            $(this).parent().find(".grid").slideToggle(300);
+                            $(this).parent().toggleClass("active");
+                        });
+                    });
+
+                    $(".page-content.products>.content .product-tabs .tabs-content .item:first .title").click();
+                }
+                else {
+                    $(".page-content.products>.content .product-tabs .tabs li:first").click();
+                }
+
+                //related products
+                if ($(".page-content.products>.content .related-products .slide .grid .walk figure").length > 0) {
+                    var relatedProductsIndex = 0;
+                    var relatedProductsQttPerPage = 5;
+                    if ((navigator.userAgent).match(/Mobile/i)) {
+                        var relatedProductsQttPerPage = 2;
+                    }
+                    var relatedProductsQttTotal = $(".page-content.products>.content .related-products .slide .grid .walk figure").length;
+
+                    $(".page-content.products>.content .related-products .slide .nav.next").click(function () {
+                        if (((relatedProductsIndex + relatedProductsQttPerPage) % (relatedProductsQttTotal * relatedProductsQttPerPage)) < relatedProductsQttTotal) {
+                            relatedProductsIndex += relatedProductsQttPerPage;
+                            relatedProductsIndex = relatedProductsIndex % (relatedProductsQttTotal * relatedProductsQttPerPage);
+                            animateRelatedProducts(relatedProductsIndex);
+                        }
+                    });
+
+                    $(".page-content.products>.content .related-products .slide .nav.prev").click(function () {
+                        if (relatedProductsIndex > 0) {
+                            relatedProductsIndex -= relatedProductsQttPerPage;
+                            relatedProductsIndex = relatedProductsIndex % (relatedProductsQttTotal * relatedProductsQttPerPage);
+                            animateRelatedProducts(relatedProductsIndex);
+                        }
+                    });
+                }
+
+                //brands slide
+                if ($(".page-content.products>.content .brands-slide .grid .walk .item").length > 0) {
+                    var brandsIndex = 0;
+                    var brandsQttPerPage = 6;
+                    if ((navigator.userAgent).match(/Mobile/i)) {
+                        var brandsQttPerPage = 2;
+                    }
+                    var brandsQttTotal = $(".page-content.products>.content .brands-slide .grid .walk .item").length;
+
+                    $(".page-content.products>.content .brands-slide .nav.next").click(function () {
+                        if (((brandsIndex + brandsQttPerPage) % (brandsQttTotal * brandsQttPerPage)) < brandsQttTotal) {
+                            brandsIndex += brandsQttPerPage;
+                            brandsIndex = brandsIndex % (brandsQttTotal * brandsQttPerPage);
+                            animateBrands(brandsIndex);
+                        }
+                    });
+
+                    $(".page-content.products>.content .brands-slide .nav.prev").click(function () {
+                        if (brandsIndex > 0) {
+                            brandsIndex -= brandsQttPerPage;
+                            brandsIndex = brandsIndex % (brandsQttTotal * brandsQttPerPage);
+                            animateBrands(brandsIndex);
+                        }
+                    });
+                }
+
+                //Adicionar ao Carrinho e Abrir o pop-up
+                $(".add-carrinho").click(function () {
+
+                    $.getJSON('/produto/AdicionarCarrinho', { "produtoId": @TempData["produto-id"] }, function (data) {
+                        if (data == "true") {
+                            //abre pop-up
+                            $(".pop-up-continue.logged-in").addClass("active");
+                        }
+                    });
+
+                });
+
+                //Abrir pop-up de orçamento sem carrinho
+                 $(".orcamento-sem-carrinho").click(function (e) {
+
+                     if ($.cookie('ck-orcamento') == "" || $.cookie('ck-orcamento') == null) {
+                         //if ($.cookie('ck-orcamento-pular') == "" || $.cookie('ck-orcamento-pular') == null) {
+
+                         //    //Primeira vez que clicou no botão
+                         //    var time_expires = 60 / 1440; /*=> 60 minutos;*/
+
+                         //    var ck_data = new Date();
+                         //    $.cookie('ck-orcamento', ck_data, { expires: time_expires, path: '/', domain: '.okoshi.com.br' });
+                         //    $.cookie('ck-orcamento', ck_data, { expires: time_expires, path: '/', domain: '.okoshi.aprovacao.act1.com.br' });
+                         //    $.cookie('ck-orcamento', ck_data, { expires: time_expires, path: '/', domain: 'localhost' });
+                         //}
+
+                         e.preventDefault();
+                         $(".nome").val('');
+                         var prod = $(".orcamento-sem-carrinho").attr("data-produto");
+                         var ref = $(".orcamento-sem-carrinho").attr("data-referencia");
+                         $(".act-popup-overlay .produto").val(prod);
+                         $(".act-popup-overlay .referencia").val(ref);
+                         $(".budget-button .produtoContent").show();
+                         $(".act-popup-overlay").removeClass("closed");
+                     }
+                     else {
+                         if ($.cookie('ck-orcamento-pular') == "" || $.cookie('ck-orcamento-pular') == null) {
+                             $(".pop-up-continue.not-logged").addClass("active");
+                         }
+                         else {
+                             e.preventDefault();
+                             $(".nome").val('');
+                             var prod = $(".orcamento-sem-carrinho").attr("data-produto");
+                             var ref = $(".orcamento-sem-carrinho").attr("data-referencia");
+                             $(".act-popup-overlay .produto").val(prod);
+                             $(".act-popup-overlay .referencia").val(ref);
+                             $(".budget-button .produtoContent").show();
+                             $(".act-popup-overlay").removeClass("closed");
+                         }
+                     }
+
+                });
+
+                //Final
+                webpImages();
+                $(".loading").fadeOut(300);
+
+            }, 1);
+        }
+
+        'use strict';
+        app.controller('produto', function ($scope, $http) {
+            $(window).load(function () {
+                $http.get('/webservice/RetornaProduto?id=' + @TempData["produto-id"]).then(function (ret) {
+
+                    $scope.categoriaPrincipalID = ret.data.CategoriaPrincipalID;
+                    $scope.categoria = ret.data.Categoria;
+                    $scope.categoriaSEUrl = ret.data.CategoriaSEUrl;
+                    $scope.nome = ret.data.Nome;
+                    $scope.descricao = ret.data.Descricao;
+                    $scope.referencia = ret.data.Referencia;
+                    $scope._marcas = ret.data._Marcas;
+                    $scope._tipos = ret.data._Tipos;
+                    $scope.atributo = ret.data.Atributo;
+                    $scope._linhas = ret.data._Linhas;
+                    $scope.aplicacoes = ret.data.Aplicacoes;
+                    $scope.caracteristicas = ret.data.Caracteristicas;
+                    $scope.beneficios = ret.data.Beneficios;
+                    $scope.complementos = ret.data.Complementos;
+                    $scope.tags = ret.data.Tags;
+                    $scope.assitenciaTecDesc = ret.data.AssitenciaTecDesc;
+
+                    $scope.imagens = ret.data.Imagens; //repeats 1
+                    var repeats = 1;
+
+                    //callback
+                    $scope.$on('LastRepeaterElement', function () {
+
+                        if (repeats == 1) {
+                            $scope.relacionados = ret.data.Relacionados; //repeats 2
+                            repeats++;
+
+                            if ($scope.relacionados.length == 0) {
+                                $scope.marcas = ret.data.Marcas; //repeats 3
+                                repeats++;
+
+                                if ($scope.marcas.length == 0) {
+                                    AfterLoadProduct();
+                                }
+                            }
+                        }
+                        else if (repeats == 2) {
+                            $scope.marcas = ret.data.Marcas; //repeats 3
+                            repeats++;
+
+                            if ($scope.marcas.length == 0) {
+                                AfterLoadProduct();
+                            }
+                        }
+                        else if (repeats == 3) {
+                            AfterLoadProduct();
+                        }
+                    });
+                });
+            });
+        });
+
+    }());
+
+</script>

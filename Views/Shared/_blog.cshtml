@@ -1,0 +1,22 @@
+﻿<div class="list" ng-controller="wordpressAPI">
+    <article ng-repeat="item in items | limitTo:3">
+        <a href="{{item.link}}" target="_blank" class="link score-blog" data-titulo="Artigos - Clique {{item.title}}" data-route="artigo" data-score="5" title="{{item.title}}">
+
+            <div class="text">
+                <h3 class="title">
+                    {{item.title | limitTo: 33}} ...
+                </h3>
+                <time>
+                    {{item.date | limitTo: 2 : 8}}/{{item.date | limitTo: 2 : 5}}/{{item.date | limitTo: 4}} | {{item.terms.category[0].name}}
+                </time>
+                <p>
+                    {{item.excerpt | removeHTMLTags | limitTo: 135}}...
+                </p>
+            </div>
+
+            <figure>
+                <img data-src="{{item.featured_image.attachment_meta.sizes.medium.url}}" />
+            </figure>
+        </a>
+    </article>
+</div>

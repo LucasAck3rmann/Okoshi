@@ -1,0 +1,349 @@
+﻿@model Dominio.tb_Produto
+@{
+    Layout = "~/Views/Shared/_layout-dynamic.cshtml";
+}
+@section metatags{
+    <title>@Model.Title - Okoshi</title>
+    <meta name='keywords' content='@Model.Keywords' />
+    <meta name='description' content='@Model.Description' />
+}
+
+<div class="page-header product-category-01 @Model.tb_Categoria.Cor">
+    <div class="grid">
+        <h2 class="title">
+            <strong>Okoshi é leve para a vida.</strong>
+        </h2>
+    </div>
+
+    <ul class="submenu">
+        @foreach (var item in new RepositorioEF.CategoriaRepositorioEF().ListarTodos())
+        {
+            <li>
+                <a href="/@item.SEUrl" title="@item.Nome">
+                    <span class="ico"></span>
+                    <span class="text">
+                        @item.Nome
+                    </span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="inner-page product-details">
+    <div class="content">
+        <ul class="breadcrumbs">
+            <li>
+                <a href="/@Model.tb_Categoria.SEUrl" title="Produtos">Produtos</a>
+            </li>
+            <li>
+                @Model.tb_Categoria.Nome
+            </li>
+        </ul>
+
+        <h2 class="product-category @Model.tb_Categoria.Cor">
+            @Model.tb_Categoria.Nome
+        </h2>
+
+        <div class="product-excerpt">
+            @if (new RepositorioEF.ProdutoImagemRepositorioEF().ListarPorProdutoID(Model.ProdutoID.ToString()).Count() > 0)
+            {
+                <div class="gallery">
+                    <div class="slide">
+                        @if (new RepositorioEF.ProdutoImagemRepositorioEF().ListarPorProdutoID(Model.ProdutoID.ToString()).Count() > 1)
+                        {
+                            <div class="nav-button prev"></div>
+                        }
+
+                        <div class="grid">
+                            <div class="walk">
+                                @foreach (var item in new RepositorioEF.ProdutoImagemRepositorioEF().ListarPorProdutoID(Model.ProdutoID.ToString()))
+                                {
+                                    <figure>
+                                        <img src="@(new RepositorioEF.DownloadRepositorioEF().GetImageId(item.DownloadID.ToString(), 282, 402))" />
+                                    </figure>
+                                }
+                            </div>
+                        </div>
+
+                        @if (new RepositorioEF.ProdutoImagemRepositorioEF().ListarPorProdutoID(Model.ProdutoID.ToString()).Count() > 1)
+                        {
+                            <div class="nav-button next"></div>
+                        }
+                    </div>
+
+                    <ul class="thumbs">
+                        @{
+                            var passou = false;
+                            foreach (var item in new RepositorioEF.ProdutoImagemRepositorioEF().ListarPorProdutoID(Model.ProdutoID.ToString()))
+                            {
+                                <li @(passou ? "" : "class=active")>
+                                    <figure class="@Model.tb_Categoria.Cor">
+                                        <img src="@(new RepositorioEF.DownloadRepositorioEF().GetImageId(item.DownloadID.ToString(), 119, 89))" />
+                                    </figure>
+                                </li>
+                                passou = true;
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+
+            <div class="info">
+                <h1 class="title">
+                    @Model.Nome
+                </h1>
+
+                @if (!string.IsNullOrEmpty(Model.Chamada))
+                {
+                    <p>
+                        @MvcHtmlString.Create(Model.Chamada.Replace(Environment.NewLine, "<br />"))
+                    </p>
+                }
+
+                <ul class="features">
+                    @if (Model.Selo1)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Sem<br>
+                                Glúten
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo2)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Sem <br>Lactose
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo3)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Livre de <br>Transgênicos
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo4)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Sem <br>Corantes
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo5)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Sem <br>Conservantes
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo6)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Sem <br>Aditivos
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo7)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Livre de <br>Colesterol
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo8)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Sem <br>Gordura Trans
+                            </span>
+                        </li>
+                    }
+
+                    @if (Model.Selo9)
+                    {
+                        <li>
+                            <div class="ico"></div>
+                            <span class="text">
+                                Vegano
+                            </span>
+                        </li>
+                    }
+                </ul>
+
+                <span class="observation">
+                    Não compartilhamos maquinários que possam causar contaminações cruzadas.
+                </span>
+
+                <a href="~/docs-and-files/CATALOGO_DIGITAL_OKOSHI_102.pdf" class="download-button score" title="Baixar Catálogo" data-route="ebook" data-score="3" data-titulo="Produto - Baixou Catálogo" target="_blank">
+                    Baixar Catálogo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-details">
+        <div class="content">
+            <div class="accordion">
+
+                @if (!string.IsNullOrEmpty(Model.DescricaoE) || !string.IsNullOrEmpty(Model.DescricaoD) || (Model.DescricaoID != (int?)null))
+                {
+                    <div class="ac-item">
+                        <div class="ac-title">
+                            <span class="ion-heart"></span>
+                            Descrição do Produto
+                        </div>
+
+                        <div class="ac-content">
+                            <div class="column">
+                                @{
+                                    var texto = "";
+                                    var texto2 = "";
+
+                                    foreach (var item in Model.DescricaoE.Split('\n'))
+                                    {
+                                        if (item.Contains("•"))
+                                        {
+                                            texto2 += item;
+                                        }
+                                        else
+                                        {
+                                            texto += item + "\n";
+                                        }
+                                    }
+
+                                    if (!string.IsNullOrEmpty(texto))
+                                    {
+                                        <p>@MvcHtmlString.Create(texto.Replace(Environment.NewLine, "<br />"))</p>
+                                    }
+
+                                    <ul class="list">
+                                        @foreach (var item in texto2.Split('•'))
+                                        {
+                                            if (!string.IsNullOrEmpty(item))
+                                            {
+                                                <li><span>@item</span></li>
+                                            }                                            
+                                        }
+                                    </ul>
+                                }
+                            </div>
+
+                            <div class="column">
+                                @if (!string.IsNullOrEmpty(Model.DescricaoD))
+                                {
+                                    if (Model.DescricaoD.Contains("•"))
+                                    {
+                                        <ul class="features">
+                                            @foreach (var item in Model.DescricaoD.Split('•'))
+                                            {
+                                                <li>@item</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <p>@MvcHtmlString.Create(Model.DescricaoD.Replace(Environment.NewLine, "<br />"))</p>
+                                    }
+                                }
+
+                                @if (Model.DescricaoID != (int?)null)
+                                {
+                                    <img src="@(new RepositorioEF.DownloadRepositorioEF().GetImageId(Model.DescricaoID.ToString(), 0, 0))" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (Model.DownloadID != (int?)null)
+                {
+                    <div class="ac-item">
+                        <div class="ac-title">
+                            <span class="ion-ios-list"></span>
+                            Tabela Nutricional
+                        </div>
+
+                        <div class="ac-content">
+                            <img src="@(new RepositorioEF.DownloadRepositorioEF().GetImageId(Model.DownloadID.ToString(), 0, 0))" class="nutrition-table" />
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    @if (new RepositorioEF.ProdutoRepositorioEF().ProdutosRelacionados(Model.ProdutoID.ToString()).Count() > 0)
+    {
+        <div class="content">
+            <h5 class="related-products-title">
+                Produtos Relacionados
+            </h5>
+
+            <div class="related-products-slide">
+                @if (new RepositorioEF.ProdutoRepositorioEF().ProdutosRelacionados(Model.ProdutoID.ToString()).Count() > 1)
+                {
+                    <div class="nav-button prev"></div>
+                }
+
+                <div class="grid">
+                    <div class="walk">
+                        @foreach (var item in new RepositorioEF.ProdutoRepositorioEF().ProdutosRelacionados(Model.ProdutoID.ToString()))
+                        {
+                            <article>
+                                <a href="@item.Url" title="@item.Nome" class="score @Model.tb_Categoria.Cor" data-score="10" data-titulo="Produto - Clique Produto @item.Nome">
+                                    <figure class="@Model.tb_Categoria.Cor">
+                                        @if (!string.IsNullOrEmpty(item.Imagem))
+                                        {
+                                            <img src="@item.Imagem" alt="@item.Nome" />
+                                        }
+                                    </figure>
+                                    <h2 class="product-name @Model.tb_Categoria.Cor">
+                                        @item.Nome
+                                    </h2>
+
+                                    @if (item.Flag)
+                                    {
+                                        <span class="new @Model.tb_Categoria.Cor"></span>
+                                    }
+                                </a>
+                            </article>
+                        }
+
+                    </div>
+                </div>
+
+                @if (new RepositorioEF.ProdutoRepositorioEF().ProdutosRelacionados(Model.ProdutoID.ToString()).Count() > 1)
+                {
+                    <div class="nav-button next"></div>
+                }
+
+            </div>
+        </div>
+    }
+
+</div>

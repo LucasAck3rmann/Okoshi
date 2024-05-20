@@ -1,0 +1,50 @@
+﻿@section metatags{
+    <title>Busca - Okoshi</title>
+    <meta name='keywords' content='' />
+    <meta name='description' content='' />
+}
+
+<div class="page-header product-category-01">
+    <div class="grid">
+        <h2 class="title">
+            Sem glúten. Sem lactose. Vegano.
+            <strong>Okoshi é leve para a vida.</strong>
+        </h2>
+    </div>
+
+    <ul class="submenu">
+        @foreach (var item in new RepositorioEF.CategoriaRepositorioEF().ListarTodos())
+        {
+            <li>
+                <a href="/@item.SEUrl" title="@item.Nome">
+                    <span class="ico"></span>
+                    <span class="text">
+                        @item.Nome
+                    </span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="inner-page product-category">
+    <div class="content">
+        <div class="description-grid">
+            <div class="title-grid justify-content-start">
+                <h1 class="title purple">
+                    Você buscou por <span class="item-busca"></span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="">
+            <p class="no-search-results">
+                Pesquisa não retornou resultados
+            </p>
+        </div>
+
+        <div class="products-list listaBuscaNavigate">
+            <!-- -->
+        </div>
+    </div>
+</div>

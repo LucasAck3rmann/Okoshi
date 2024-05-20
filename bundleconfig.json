@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "Content/bootstrap.min.min.css",
+    "inputFiles": [
+      "Content/bootstrap.min.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/bootstrap.min.css",
+    "inputFiles": [
+      "Content/bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/angular.min.min.js",
+    "inputFiles": [
+      "Scripts/angular.min.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/angular.min.js",
+    "inputFiles": [
+      "Scripts/angular.js"
+    ]
+  }
+]

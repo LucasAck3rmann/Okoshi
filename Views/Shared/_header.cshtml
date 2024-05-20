@@ -1,0 +1,25 @@
+﻿<header class="no-lazy-loading">
+    <div class="content">
+        <a href="/" class="logo no-lazy-loading"></a>
+
+        <nav>
+            @Html.Partial("_menu")
+
+            <div class="search-box">
+                <input type="text" placeholder="Digite o nome do produto" class="txt-buscar" />
+                <input type="submit" value="&#xf4a4;" class="bt-busca" />
+            </div>
+
+            <a href="/onde-comprar" class="button">
+                <span class="ion-location"></span>
+                Onde Comprar
+            </a>
+
+            @Html.Partial("_social-media")
+        </nav>
+    </div>
+
+    <div class="menu-button">
+        <i class="ion-ios-more"></i>
+    </div>
+</header>

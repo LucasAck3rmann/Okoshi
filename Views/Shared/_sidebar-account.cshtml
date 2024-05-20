@@ -1,0 +1,21 @@
+﻿<aside class="sidebar-account">
+    <ul>
+        <li>
+            <a href="/minha-conta" title="Início" class="@(Request.RawUrl.ToString().ToLower() == "/minha-conta" ? "active" : "")">
+                Início
+            </a>
+        </li>
+        <li>
+            <a href="/minha-conta/dados" title="Meus Dados" class="@(Request.RawUrl.ToString().ToLower() == "/minha-conta/dados" ? "active" : "")">
+            Meus Dados</a>
+        </li>
+        <li>
+            <a href="/minha-conta/orcamentos" title="Meus Orçamentos" class="@(Request.RawUrl.ToString().ToLower() == "/minha-conta/orcamentos" ? "active" : "")">
+            Meus Orçamentos</a>
+        </li>
+        <li>
+            <a href="/carrinho" title="Carrinho" class="@(Request.RawUrl.ToString().ToLower() == "/carrinho" ? "active" : "")">
+            Meu Carrinho</a>
+        </li>
+    </ul>
+</aside>

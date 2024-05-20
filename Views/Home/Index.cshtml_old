@@ -1,0 +1,438 @@
+﻿@section metatags{
+    <title>Okoshi</title>
+    <meta name='keywords' content='' />
+    <meta name='description' content='' />
+}
+
+<section class="home" data-section-name="home">
+    <div class="walk">
+        <div class="item slide-02 no-lazy-loading">
+            <div class="content">
+                <div class="text-grid">
+                    <div class="text-container">
+                        <h2 class="title no-lazy-loading">
+                            #Novidade
+                        </h2>
+
+                        <div class="text">
+                            <h3 class="subtitle">
+                                Pipocas <span>Prontas</span>
+                            </h3>
+
+
+                        </div>
+                    </div>
+
+                    <img src="~/images/product-pipoca-ervas-1.png" />
+                </div>
+
+                <a href="/Busca/pipoca%20pronta" class="button score" data-score="10" data-titulo="Home - Clique Pipoca Pronta" title="Novidade Pipoca Pronta">
+                    Confira!
+                </a>
+            </div>
+
+            <div class="background no-lazy-loading" data-0="top:0vh;" data-_x1="top:60vh;"></div>
+
+            <div class="product-right no-lazy-loading" data-0="margin-top:-288px;" data-_x1="margin-top:-188px"></div>
+            <div class="line-title no-lazy-loading" data-0="transform:scale(1); opacity:1;" data-_x1="transform:scale(.7); opacity:0;"></div>
+        </div>
+        <div class="item slide-01">
+            <div class="content">
+                <div class="text-grid">
+                    <div class="text-container">
+                        <h2 class="title">
+                            Pause.
+                        </h2>
+
+                        <div class="text">
+                            <h3 class="subtitle">
+                                Tá na hora do seu<br />
+                                <strong>#MomentoOkoshi.</strong>
+                            </h3>
+
+                            <p>
+                                Um momento de sabor e leveza no seu dia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <img data-src="/images/section-home-banner-01-products.png" />
+                </div>
+
+                <a href="#produtos" class="button go-to-page score" data-score="10" data-titulo="Home - Clique Conheça os alimentos e leve sempre com você" title="Conheça os alimentos e leve sempre com você!">
+                    Conheça os alimentos e leve sempre com você!
+
+                    <span class="ion-chevron-down"></span>
+                </a>
+            </div>
+
+            <div class="background" data-0="top:0vh;" data-_x1="top:60vh;"></div>
+            <div class="man" data-0="margin-top:-288px;" data-_x1="margin-top:-188px"></div>
+            <div class="man-doodles" data-0="transform:scale(1); opacity:1;" data-_x1="transform:scale(.7); opacity:0;"></div>
+        </div>
+    </div>
+
+    <ul class="nav-buttons"></ul>
+
+    <div class="arrow-button prev no-lazy-loading"></div>
+    <div class="arrow-button next no-lazy-loading"></div>
+</section>
+
+<section class="space">
+    <h3 class="title" data-0="opacity:0; margin-top:40px;" data-500="opacity:1; margin-top:0px;">
+        Livre de glúten, lactose e químicos.<br />
+        Okoshi faz bem!
+    </h3>
+
+    <span class="ion-chevron-down" data-0="opacity:0;" data-500="opacity:1;"></span>
+</section>
+
+<section class="about-us" data-section-name="quem-somos">
+    <div class="content">
+        <div class="title-grid">
+            <h2 class="title">
+                Por uma vida mais leve
+            </h2>
+        </div>
+
+        <a href="#" class="open-button score" data-score="10" data-titulo="Quem Somos - Clique Quero ser leve" title="Quero ser leve">
+            Quero ser leve
+        </a>
+
+        <div class="text">
+            <p>
+                A vida moderna é muito corrida. Tantos afazeres e obrigações que até esquecemos do mais importante: da nossa saúde e bem-estar.
+            </p>
+            <p>
+                Parar? Não dá. Mas você pode escolher viver de forma muito mais leve, começando pela alimentação. É para isso que a Okoshi quer estar com você, para trazer leveza e equilíbrio ao seu cotidiano.
+            </p>
+            <p>
+                <strong>
+                    Sem peso na consciência, sem peso no bolso,<br />
+                    só saúde e sabor a qualquer momento.
+                </strong>
+            </p>
+
+            <a href="/quem-somos" class="button score" data-score="10" data-titulo="Quem Somos - Clique Conheça a Okoshi e leve o melhor para a sua vida." title="Conheça a Okoshi e leve o melhor para a sua vida.">
+                Conheça a Okoshi e leve o melhor para a sua vida.
+            </a>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="person-01" data-155="top:600px" data-_x1-155="top:188px"></div>
+        <div class="person-02" data-155="top:1000px" data-_x1-255="top:102px"></div>
+        <div class="person-03" data-155="top:-100px;" data-_x1-155="top:102px;"></div>
+        <div class="person-04" data-155="top:1000px" data-_x1-255="top:8px"></div>
+        <div class="person-05" data-155="top:600px" data-_x1-155="top:188px"></div>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="pop-corn-blurred" data-155="top:-150px" data-_x1-155="top:0px;" data-_x1-2000="top:600px;"></div>
+    <div class="pop-corn" data-155="top:-70px" data-_x1-155="top:0px;" data-_x1-2000="top:300px;"></div>
+</section>
+
+<section class="products" data-section-name="produtos">
+    <div class="content">
+        <div class="products-list">
+            <article>
+                <a href="/pipocas" title="Pipocas" class="score" data-score="10" data-titulo="Home - Clique na Categoria Pipocas">
+                    <figure>
+                        <img data-src="/images/section-products-thumb-01.png" alt="Pipocas" />
+                    </figure>
+                    <div class="text">
+                        <h2 class="title">
+                            Pipocas
+                        </h2>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="/torradas" title="Torradas" class="score" data-score="10" data-titulo="Home - Clique na Categoria Torradas">
+                    <figure>
+                        <img data-src="/images/section-products-thumb-02.png" alt="Torradas" />
+                    </figure>
+                    <div class="text">
+                        <h2 class="title">
+                            Torradas
+                        </h2>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="/flocos-de-arroz" title="Flocos de Arroz" class="score" data-score="10" data-titulo="Home - Clique na Categoria Flocos de Arroz">
+                    <figure>
+                        <img data-src="/images/section-products-thumb-03.png" alt="Flocos de Arroz" />
+                    </figure>
+                    <div class="text">
+                        <h2 class="title">
+                            Flocos<br />
+                            de Arroz
+                        </h2>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="/barrinhas-de-arroz" title="Barrinhas de Arroz" class="score" data-score="10" data-titulo="Home - Clique na Categoria Barrinhas de Arroz">
+                    <figure>
+                        <img data-src="/images/section-products-thumb-04.png" alt="Barrinhas de Arroz" />
+                    </figure>
+                    <div class="text">
+                        <h2 class="title">
+                            Barrinhas<br />
+                            de Arroz
+                        </h2>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="/salgadinhos-rozen" title="Salgadinhos Rozen" class="score" data-score="10" data-titulo="Home - Clique na Categoria Salgadinhos Rozen">
+                    <figure>
+                        <img data-src="/images/section-products-thumb-05.png" alt="Salgadinhos Rozen" />
+                    </figure>
+                    <div class="text">
+                        <h2 class="title">
+                            Salgadinhos<br />
+                            Rozen
+                        </h2>
+                    </div>
+                </a>
+            </article>
+        </div>
+
+        <div class="bar">
+            <h3 class="title">
+                Alimentos leves, saborosos<br />
+                e 100% naturais.
+            </h3>
+
+            <ul class="list">
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem<br />
+                        Glúten
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br />Lactose
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Livre de <br />Transgênicos
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br />Corantes
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br />Conservantes
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br />Aditivos
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Livre de <br />Colesterol
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Sem <br />Gordura Trans
+                    </span>
+                </li>
+
+                <li>
+                    <div class="ico"></div>
+                    <span class="text">
+                        Vegano
+                    </span>
+                </li>
+
+            </ul>
+
+            <a href="/onde-comprar" class="button score" data-score="10" data-titulo="Produtos - Clique Onde Comprar" title="Onde Comprar">
+                <span class="ion-location"></span>
+                Onde Comprar
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="features" data-section-name="diferenciais">
+    <div class="content">
+        <h4 class="title">
+            Por que <span>Okoshi?</span>
+        </h4>
+
+        <ul class="list">
+            <li>
+                <div class="title-grid">
+                    <div class="ico"></div>
+                    <h6 class="title">
+                        Há 60 anos<br />
+                        com você
+                    </h6>
+                </div>
+
+                <div class="text">
+                    <p>
+                        Desde 1960, a Okoshi leva opções saudáveis às vidas das pessoas, marcando presença em casas, festas, academias, recreios e empresas por todo o Brasil, em qualquer momento e lugar.
+                        @*<strong>
+                                <em>
+                                    É o equilíbrio entre saúde e leveza na sua vida.
+                                </em>
+                            </strong>*@
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="title-grid">
+                    <div class="ico"></div>
+                    <h6 class="title">
+                        Ingredientes<br />
+                        Naturais
+                    </h6>
+                </div>
+                <div class="text">
+                    <p>
+                        Nossos produtos contêm ingredientes 100% orgânicos. É tudo natural e leve, com até 5 ingredientes (no máximo), nada artificial nem de origem animal. Okoshi é vegano! Também não contêm glúten nem lactose.<br />
+                        <strong>
+                            <em>
+                                É o equilíbrio entre saúde e leveza na sua vida.
+                            </em>
+                        </strong>
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="title-grid">
+                    <div class="ico"></div>
+                    <h6 class="title">
+                        Aqui tem selo BDK<br />
+                        (Produtos Kosher)
+                    </h6>
+                </div>
+                <div class="text">
+                    <p>
+                        Todos os produtos da Okoshi são alimentos kosher, ou seja, passaram por uma confiável supervisão e são apropriados para a dieta seguida pelos judeus.
+                        <strong>
+                            <em>
+                                Basta procurar o selo BDK e curtir seu momento Okoshi com total segurança e confiança.
+                            </em>
+                        </strong>
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="title-grid">
+                    <div class="ico"></div>
+                    <h6 class="title">
+                        Linhas de produção<br />
+                        separadas
+                    </h6>
+                </div>
+                <div class="text">
+                    <p>
+                        Na indústria Okoshi, cada produto tem seu próprio maquinário de produção, ou seja, determinado produto não entra em contato com outras produções que possam conter glúten, lactose, soja, elementos de origem animal, etc.
+
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="title-grid">
+                    <div class="ico"></div>
+                    <h6 class="title">
+                        Programa<br />
+                        “Fechando Ciclo”
+                    </h6>
+                </div>
+                <div class="text">
+                    <p>
+                        A saúde do meio ambiente também importa! No programa “Fechando o Ciclo”, reciclamos a mesma quantidade de plástico que usamos em nossos processos e embalagens anualmente, em parceria com corporativas de reciclagem e catadores de lixo.
+
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+        <a href="/onde-comprar" class="button score" data-score="10" data-titulo="Produtos - Clique Leve Okoshi para o seu dia a dia." title="Leve Okoshi para o seu dia a dia.">
+            <span class="grid">
+                Leve Okoshi para o seu <span>dia a dia.</span>
+            </span>
+        </a>
+    </div>
+</section>
+
+<section class="catalog" data-section-name="catalogo">
+    <div class="content">
+        <h2 class="title">
+            Catálogo de Produtos
+        </h2>
+
+        <p>
+            <big>Que tal conferir a linha completa dos produtos da Okoshi?</big>
+            <br />
+            Preencha com seus dados abaixo e faça o download!
+        </p>
+
+        <a href="~/docs-and-files/CATALOGO_DIGITAL_OKOSHI_102.pdf" class="button score" title="Baixar Catálogo" data-route="ebook" data-score="3" data-titulo="Home - Baixou Catálogo" target="_blank">
+            Baixar Catálogo
+        </a>
+    </div>
+</section>
+
+<section class="blog" data-section-name="blog">
+    <div class="content">
+        <h2 class="title">
+            Nosso blog está imperdível! Olha só:
+        </h2>
+
+        @Html.Partial("_blog")
+
+        <a href="/blog" target="_blank" class="button score" data-score="10" data-titulo="Blog - Clique Ver todos Artigos do Blog" title="Ver todos">
+            <span>Ver todos</span>
+        </a>
+    </div>
+</section>
+
+<section class="instagram" data-section-name="instagram">
+    <div class="content">
+        <h2 class="title">
+            Acompanhe a @@OkoshiAlimentos nas redes sociais:
+        </h2>
+
+        @Html.Partial("_Instagram")       
+        
+    </div>
+</section>

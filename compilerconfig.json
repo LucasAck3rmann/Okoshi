@@ -1,0 +1,26 @@
+﻿[
+  {
+    "outputFile": "Scripts/act-popup/act-popup.css",
+    "inputFile": "Scripts/act-popup/act-popup.scss"
+  },
+  {
+    "outputFile": "Scripts/jquery.fileUpload/jquery.fileUpload.css",
+    "inputFile": "Scripts/jquery.fileUpload/jquery.fileUpload.scss"
+  },
+  {
+    "outputFile": "Content/site/home-page.css",
+    "inputFile": "Content/site/home-page.scss"
+  },
+  {
+    "outputFile": "Content/site/inner-pages.css",
+    "inputFile": "Content/site/inner-pages.scss"
+  },
+  {
+    "outputFile": "Content/site/loading.css",
+    "inputFile": "Content/site/loading.scss"
+  },
+  {
+    "outputFile": "Scripts/actbox/actbox.css",
+    "inputFile": "Scripts/actbox/actbox.scss"
+  }
+]

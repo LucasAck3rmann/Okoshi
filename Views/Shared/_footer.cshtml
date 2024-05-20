@@ -1,0 +1,63 @@
+﻿<footer>
+    <div class="content">
+        <div class="form-grid">
+            <ul class="form-tabs">
+                <li class="active">
+                    SAC
+                </li>
+                <li>
+                    Quero Revender
+                </li>
+            </ul>
+
+            <div class="form-item">
+                @Html.Partial("_sac")
+            </div>
+
+            <div class="form-item">
+                @Html.Partial("_revenda")
+            </div>
+        </div>
+
+        <div class="info">
+            <a href="/onde-comprar" class="button" title="Onde Comprar">
+                <span class="ion-location"></span>
+                Onde Comprar
+            </a>
+
+            <div class="contact">
+                <h5 class="phone">
+                    (11) 2941-8488
+                </h5>
+                <a href="mailto:contato@okoshi.com.br" class="email" title="contato@okoshi.com.br">
+                    contato@okoshi.com.br
+                </a>
+                <span class="hour">
+                    Horário de Atendimento: 7h às 16:30h
+                </span>
+            </div>
+        </div>
+
+        <div class="social-media-grid">
+            <div class="logo"></div>
+
+            @Html.Partial("_social-media");
+        </div>
+
+        <div class="bottom-bar">
+            <div class="column">
+                <a href="/politica-de-privacidade" class="policy">
+                    Política de Privacidade
+                </a>
+            </div>
+
+            @Html.Partial("_signature")
+
+            <div class="column">
+                <span class="copyright">
+                    @DateTime.Now.Year.ToString() Okoshi – Todos os direitos reservados
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
